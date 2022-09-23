@@ -1,0 +1,84 @@
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --red: firebrick;
+  --white: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font: 22px/1.5 sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+/* MAIN STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container a{
+  border-bottom: 2px dashed var(--red);
+  position: relative;
+}
+
+.container a::before{
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(0); 
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  content: '';
+  background-color: var(--white);
+  z-index: -1;
+  /* a태그에 백그라운드가 있다면 그게 제일 뒤에있고, 그다음이 컨텐츠인데  z-index를 -1을 주면 그 사이로 들어감. */
+  transform-origin: 50% 50%; /* 변경시 기준점을 잡아줌  center도 됨*/
+  transition: all .3s ease-out; /* 끝이 느린속도 */
+}
+
+.bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  /* background-color: aqua; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* 높이가 줄어들더라도 그 높이까지 커버를 해 */
+  transition: all .3s ease-out; /* 끝이 느린속도 */
+}
+
+.bg-show .bg{
+  opacity: 1;
+  z-index: 1;
+}
+
+.container a:hover{
+  z-index: 2;
+  border-bottom-color: transparent;
+  color: var(--red);
+}
+
+.container a:hover:before{
+  transform: translate(-50%, -50%) scaleX(1);
+}

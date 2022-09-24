@@ -12,7 +12,8 @@ for(const link of links){
   link.addEventListener('mouseenter',()=>{
     bg.style.backgroundImage = `url(${link.dataset.bg})`; // this 난 왜 안돼
     document.body.classList.add(showClass);
-  }) 
+  })
+  
   link.addEventListener('mouseleave',()=>{
     document.body.classList.remove(showClass);
   })

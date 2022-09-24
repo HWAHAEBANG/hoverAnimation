@@ -39,6 +39,7 @@ h1 {
 }
 
 .container a::before{
+  content: '';
   position: absolute;
   top: 50%; 
   left: 50%;
@@ -46,11 +47,10 @@ h1 {
   width: 100%;
   height: 100%;
   min-height: 30px;
-  content: '';
   background-color: var(--white);
   z-index: -1;
   /* a태그에 백그라운드가 있다면 그게 제일 뒤에있고, 그다음이 컨텐츠인데  z-index를 -1을 주면 그 사이로 들어감. */
-  transform-origin: 50% 50%; /* 변경시 기준점을 잡아줌  center도 됨*/
+  transform-origin: 50% 50%; /* 변경시 기준점을 잡아줌  center도 됨 */
   transition: all .3s ease-out; /* 끝이 느린속도 */
 }
 
@@ -68,7 +68,7 @@ h1 {
   transition: all .3s ease-out; /* 끝이 느린속도 */
 }
 
-.bg-show .bg{
+.bg-show .bg{ /* body에 .bg-show가 들어오면 .bg가 동작하는거지 */
   opacity: 1;
   z-index: 1;
 }

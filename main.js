@@ -13,7 +13,7 @@ for(const link of links){
     bg.style.backgroundImage = `url(${link.dataset.bg})`; // this 난 왜 안돼
     document.body.classList.add(showClass);
   })
-  
+
   link.addEventListener('mouseleave',()=>{
     document.body.classList.remove(showClass);
   })
@@ -21,7 +21,3 @@ for(const link of links){
 }
 
 
-// document.addEventListener('click',(ev) => {
-//   let word = ev.target;
-//   console.log(word);
-// })
